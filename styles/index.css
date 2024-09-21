@@ -243,3 +243,9 @@ footer {
     font-weight: bold;
     font-size: larger;
 }
+
+nav a.active {
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+}
