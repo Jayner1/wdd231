@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 courseItem.style.backgroundColor = '#333'; // black for not completed
                 courseItem.style.color = 'white';
-                courseItem.style.opacity = '0.4';
+                courseItem.style.opacity = '0.7';
             }
             courseItem.style.padding = '10px';
             courseItem.style.borderRadius = '4px';
@@ -38,19 +38,15 @@ const showCseBtn = document.getElementById('show-cse');
 const showWddBtn = document.getElementById('show-wdd');
 const totalCreditsElement = document.getElementById('total-credits');
 
-// Function to display courses based on a filter and calculate total credits
 function displayCourses(filter = 'all') {
-    // Clear the existing courses
     coursesContainer.innerHTML = '';
 
-    // Filter the courses based on the selected subject (CSE, WDD, or all)
     const filteredCourses = courses.filter(course => {
         if (filter === 'CSE') return course.subject === 'CSE';
         if (filter === 'WDD') return course.subject === 'WDD';
-        return true; // For 'all', show all courses
+        return true; 
     });
 
-    // Dynamically create course elements and append to the container
     filteredCourses.forEach(course => {
         const courseItem = document.createElement('div');
         courseItem.classList.add('course-item');
@@ -65,17 +61,14 @@ function displayCourses(filter = 'all') {
         coursesContainer.appendChild(courseItem);
     });
 
-    // Calculate total credits for the filtered courses
     const totalCredits = filteredCourses.reduce((acc, course) => acc + course.credits, 0);
     totalCreditsElement.textContent = `Total Credits: ${totalCredits}`;
 }
 
-// Event listeners for the filter buttons
 showAllBtn.addEventListener('click', () => displayCourses('all'));
 showCseBtn.addEventListener('click', () => displayCourses('CSE'));
 showWddBtn.addEventListener('click', () => displayCourses('WDD'));
 
-// Display all courses by default on page load
 displayCourses();
 
 export default displayCourses;
