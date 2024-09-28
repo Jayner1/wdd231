@@ -1,0 +1,73 @@
+[
+    {
+        "name": "Kadlec Regional Medical Center",
+        "address": "888 Swift Blvd. Richland, WA 99352",
+        "phone": "(509) 946-4611",
+        "website": "https://www.kadlec.org",
+        "image": "images/kadlec.png",
+        "membership_level": 3,
+        "contact_person": "Emily Volland",
+        "member_since": 1987
+    },
+    {
+        "name": "Tri-City Construction Council Inc.",
+        "address": "20 E. Kennewick Avenue. Kennewick, WA 99336",
+        "phone": "(509) 582-7424",
+        "website": "https://tricityplancenter.com/",
+        "image": "images/construction.jpg",
+        "membership_level": 3,
+        "contact_person": "Scott Howard",
+        "member_since": 2012
+    },
+    {
+        "name": "Stark Design",
+        "address": "6001 W. Deschutes Ave., Ste 616. Kennewick WA, 99336",
+        "phone": "(425) 314-6466",
+        "website": "https://www.starkdesignplus.com/",
+        "image": "images/stark.webp",
+        "membership_level": 1,
+        "contact_person": "Katie Starkey",
+        "member_since": 2024
+    },
+    {
+        "name": "Best Western",
+        "address": "602 N. Young Street. Kennewick WA, 99336",
+        "phone": "(509) 396-9979",
+        "website": "https://www.bestwestern.com/en_US/book/hotels-in-kennewick/best-western-kennewick-convention-center-hotel/propertyCode.48189.html",
+        "image": "images/western.webp",
+        "membership_level": 2,
+        "contact_person": "Katelynn Togiai",
+        "member_since": 2009
+    },
+    {
+        "name": "Numerica Credit Union",
+        "address": "8551 W. Gage Blvd. Suite E. Kennewick, WA 99336",
+        "phone": "(509) 688-6994",
+        "website": "https://www.numericacu.com/business/loans/",
+        "image": "images/numerica.webp",
+        "membership_level": 3,
+        "contact_person": "Paige Harding",
+        "member_since": 2017
+    },
+    {
+        "name": "Five Guys Burgers and Fries",
+        "address": "2671 Queensgate Dr. Richland, WA 99352",
+        "phone": "(509) 222-1120",
+        "website": "https://www.fiveguys.com/",
+        "image": "images/burgers.webp",
+        "membership_level": 3,
+        "contact_person": "Patrick Carls",
+        "member_since": 2013
+    },
+    {
+        "name": "The Hand Clinic of Tri-Cities",
+        "address": "7401 W. Hood Place. Kennewick WA, 99336",
+        "phone": "(509) 737-7919",
+        "website": "https://www.thehandclinicoftricities.com/",
+        "image": "images/hand.jpg",
+        "membership_level": 1,
+        "contact_person": "Sherri Vadala",
+        "member_since": 2024
+    }
+]
+

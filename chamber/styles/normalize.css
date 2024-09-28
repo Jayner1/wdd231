@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: "Kanit", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+header img {
+    width: 225px;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+nav h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    padding: 5px 10px;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: transform 0.3s ease;
+}
+
+.hamburger.open div:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.open div:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open div:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30px; 
+    right: 0; 
+    background-color: darkgrey;
+    width: 200px;
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 1000; 
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+        order: 1; 
+        padding-right: 10px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px; 
+        right: 0; 
+        background-color: darkgrey;
+        width: 200px;
+        border-radius: 8px;
+        padding: 10px 0;
+        z-index: 1000; 
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+.resources {
+    list-style-type: none;
+    padding: 0;
+}
+
+.resources li {
+    margin: 5px 0;
+}
+
+.resources a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.resources a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+nav a.active {
+    background-color: rgb(105, 105, 105);
+    color: white;
+    border-radius: 5px;
+}
+
+.view-toggle {
+    margin-top: 10px;
+}
+
+.view-toggle button {
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.view-toggle .active {
+    background-color: #0056b3;
+    color: white;
+}
+
+main {
+    padding: 20px;
+}
+
+main h1 {
+    text-align: center;
+}
+
+#membersContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.member-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    width: 30%;
+}
+
+.member-card img {
+    max-width: 100px;
+}
+
+.member-card h3 {
+    margin: 10px 0;
+}
+
+.list-view .member-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list-view .member-card img {
+    max-width: 50px;
+}

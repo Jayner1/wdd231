@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tri-Cities WA Chamber of Commerce Directory Page</title>
+    <meta name="description" content="This is a site for the directory page for Kennewick WA's Chamber of Commerce. Made by Jason Yale.">
+    <meta name="author" content="Jason Yale">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="icon" href="images/favicon.ico">
+    <script src="scripts/chamber.js"></script>
+    <meta property="og:title" content="Kennewick, WA"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="images/kennewick.jpg"/>
+    <meta property="og:url" content="Jayner1.github.io/wdd231/chamber/directory.html"/>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <img src="images/kennewick.jpg" alt="Logo">
+            <h1>Tri-Cities Chamber of Commerce</h1>
+        </div>
+        <nav>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="nav-links">
+                <a href="#">Home</a> 
+                <a href="#" title="Directory" class="active">Directory</a>
+                <a href="#">Join</a>
+                <a href="#">Discover</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>Member Directory</h1>
+        <div class="view-toggle">
+            <button id="gridView" class="active">Grid View</button>
+            <button id="listView">List View</button>
+        </div>
+        <div id="membersContainer" class="grid-view">
+        </div>
+    </main>
+    <footer>
+        <p>&copy; <span id="copyrightYear">YYYY</span> Jason Yale - Washington</p>
+        <p id="lastModified">Last Modified: </p>
+    </footer>
+</body>
+</html>
