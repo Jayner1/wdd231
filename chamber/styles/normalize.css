@@ -145,10 +145,28 @@ nav a:hover::after {
 }
 
 footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
+    display: flex;
+    justify-content: space-between; 
+    padding: 20px; 
+    background-color: #333; 
+    color: white; 
+}
+
+.footer-left {
+    flex: 1; 
+}
+
+.footer-right {
+    text-align: right; 
+}
+
+footer a {
+    color: white; 
+    text-decoration: none; 
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
 nav a.active {
