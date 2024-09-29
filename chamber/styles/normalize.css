@@ -146,18 +146,32 @@ nav a:hover::after {
 
 footer {
     display: flex;
-    justify-content: space-between; 
-    padding: 20px; 
-    background-color: #333; 
-    color: white; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
 }
 
 .footer-left {
-    flex: 1; 
+    flex: 1;
 }
 
 .footer-right {
+    flex: 1; 
     text-align: right; 
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+}
+
+.footer-icons img {
+    width: 45px; 
+    height: auto;
 }
 
 footer a {
