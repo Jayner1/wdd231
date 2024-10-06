@@ -129,10 +129,6 @@ nav a:hover::after {
         font-size: 1rem;
         padding: 12px 24px;
     }
-
-    .cards-section {
-        grid-template-columns: 1fr; 
-    }
 }
 
 .resources {
