@@ -81,3 +81,107 @@ function displayMembers(members, viewType) {
         membersContainer.classList.remove('grid-view');
     }
 }
+
+const apiKey = 'cbe9d1ec5864fde344f50f2984bba66f';
+const city = 'Kennewick';
+const weatherEndpoint = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
+
+async function fetchWeather() {
+    try {
+        const response = await fetch(weatherEndpoint);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+
+        if (data && data.weather) {
+            const cityName = data.name; 
+            const temperature = data.main.temp; 
+            const weatherDescription = data.weather[0].description; 
+            const highTemp = data.main.temp_max; 
+            const lowTemp = data.main.temp_min;
+            const humidity = data.main.humidity; 
+            const sunrise = new Date(data.sys.sunrise * 1000).toLocaleTimeString(); 
+            const sunset = new Date(data.sys.sunset * 1000).toLocaleTimeString(); 
+            const icon = data.weather[0].icon; 
+
+            document.getElementById('weather-details').innerHTML = `
+                <img src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather icon" />
+                <p>${temperature.toFixed(0)}°F</p>
+                <p>Condition: ${weatherDescription.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}</p>
+                <p>High: ${highTemp.toFixed(0)}°F</p>
+                <p>Low: ${lowTemp.toFixed(0)}°F</p>
+                <p>Humidity: ${humidity}%</p>
+                <p>Sunrise: ${sunrise}</p>
+                <p>Sunset: ${sunset}</p>
+            `;
+        } else {
+            document.getElementById('weather-details').textContent = "Unable to fetch weather data.";
+        }
+    } catch (error) {
+        console.error("Error fetching weather:", error);
+        document.getElementById('weather-details').textContent = "Error loading weather.";
+    }
+}
+
+fetchWeather();
+
+async function fetchWeatherForecast() {
+    const apiKey = 'cbe9d1ec5864fde344f50f2984bba66f';
+    const city = 'Kennewick'; 
+    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`;
+
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error('Failed to fetch weather data');
+        }
+        const data = await response.json();
+        displayWeatherForecast(data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+function displayWeatherForecast(data) {
+    const forecastContainer = document.getElementById('forecast-details');
+
+    forecastContainer.innerHTML = '';
+
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+    const dayAfterTomorrow = new Date(today);
+    dayAfterTomorrow.setDate(today.getDate() + 2);
+
+    const todayHigh = data.list[0].main.temp_max; 
+    let tomorrowHigh = null; 
+    let dayAfterTomorrowHigh = null; 
+
+    data.list.forEach(item => {
+        const date = new Date(item.dt * 1000); 
+
+        if (date.getDate() === tomorrow.getDate() && 
+            (!tomorrowHigh || item.main.temp_max > tomorrowHigh)) {
+            tomorrowHigh = item.main.temp_max; 
+        } else if (date.getDate() === dayAfterTomorrow.getDate() && 
+            (!dayAfterTomorrowHigh || item.main.temp_max > dayAfterTomorrowHigh)) {
+            dayAfterTomorrowHigh = item.main.temp_max; 
+        }
+    });
+
+    const options = { weekday: 'long' }; 
+    const tomorrowName = tomorrow.toLocaleDateString('en-US', options);
+    const dayAfterTomorrowName = dayAfterTomorrow.toLocaleDateString('en-US', options);
+
+    let forecastHtml = ''; 
+    forecastHtml += `<p>Today: ${todayHigh.toFixed(0)}°F</p>`; 
+    forecastHtml += `<p>${tomorrowName}: ${tomorrowHigh ? tomorrowHigh.toFixed(0) : 'N/A'}°F</p>`; 
+    forecastHtml += `<p>${dayAfterTomorrowName}: ${dayAfterTomorrowHigh ? dayAfterTomorrowHigh.toFixed(0) : 'N/A'}°F</p>`; 
+
+    forecastContainer.innerHTML = forecastHtml; 
+}
+
+fetchWeatherForecast();
+

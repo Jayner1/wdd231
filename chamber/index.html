@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tri-Cities WA Chamber of Commerce Directory Page</title>
-    <meta name="description" content="This is a site for the directory page for Kennewick WA's Chamber of Commerce. Made by Jason Yale.">
+    <title>Tri-Cities WA Chamber of Commerce Home Page</title>
+    <meta name="description" content="">
     <meta name="author" content="Jason Yale">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="icon" href="images/favicon.ico">
     <script src="scripts/chamber.js"></script>
+    <script src="scripts/randomMembers.js" defer></script>
     <meta property="og:title" content="Tri-City Regional Chamber of Commerce"/>
     <meta property="og:type" content="website"/>
     <meta property="og:image" content="https://jayner1.github.io/wdd231/chamber/images/kennewick.jpg"/>
-    <meta property="og:url" content="https://jayner1.github.io/wdd231/chamber/directory.html"/>
+    <meta property="og:url" content="https://jayner1.github.io/wdd231/chamber/index.html"/>
 </head>
 <body>
     <header>
@@ -27,21 +28,43 @@
                 <div></div>
             </div>
             <div class="nav-links">
-                <a href="index.html">Home</a> 
-                <a href="directory.html" title="Directory" class="active">Directory</a>
+                <a href="index.html" title="Home Page" class="active">Home</a> 
+                <a href="directory.html" title="Directory">Directory</a>
                 <a href="#">Join</a>
                 <a href="#">Discover</a>
             </div>
         </nav>
     </header>
     <main>
-        <h1>Member Directory</h1>
-        <div class="view-toggle">
-            <button id="gridView" class="active">Grid View</button>
-            <button id="listView">List View</button>
-        </div>
-        <div id="membersContainer" class="grid-view">
-        </div>
+        <section class="hero">
+            <img src="images/blue.jpg" alt="Blue Bridge" class="hero-image">
+            <div class="hero-text">
+                <a href="#" class="hero-button">Join the Chamber Today</a>
+            </div>
+        </section>
+        <section class="cards-section">
+            <div class="card">
+                <h3>Upcoming Events</h3>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Current Weather</h3>
+                <div id="weather-details"></div>
+            </div>
+            <div class="card">
+                <h3>3-Day Forecast</h3>
+                <div id="forecast-details"></div>
+            </div>
+        </section>
+        <section class="random-member-section">
+            <h2>Featured Members</h2>
+            <div class="random-member-cards">
+            </div>
+        </section>
     </main>
     <footer>
         <div class="footer-left">
