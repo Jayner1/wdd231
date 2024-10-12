@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tri-Cities WA Chamber of Commerce Directory Page</title>
+    <meta name="description" content="This is a site for the directory page for Kennewick WA's Chamber of Commerce. Made by Jason Yale.">
+    <meta name="author" content="Jason Yale">
+    <link rel="stylesheet" href="styles/join.css">
+    <link rel="icon" href="images/favicon.ico">
+    <script src="scripts/chamber.js"></script>
+    <script src="scripts/join.js"></script>
+    <meta property="og:title" content="Tri-City Regional Chamber of Commerce"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="https://jayner1.github.io/wdd231/chamber/images/kennewick.jpg"/>
+    <meta property="og:url" content="https://jayner1.github.io/wdd231/chamber/directory.html"/>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <img src="images/kennewick.jpg" alt="Logo">
+            <h1>Tri-Cities Chamber of Commerce</h1>
+        </div>
+        <nav>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a> 
+                <a href="directory.html" title="Directory">Directory</a>
+                <a href="join.html" title="Join" class="active">Join</a>
+                <a href="#">Discover</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="join-page"> 
+            <div class="form-cards-container">
+                <form method="GET" action="thankyou.html">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" title="First Name" autocomplete="given-name" required>
+                    <br><br>
+                
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" title="Last Name" autocomplete="family-name" required>
+                    <br><br>
+                
+                    <label for="orgTitle">Organizational Title:</label>
+                    <input type="text" id="orgTitle" name="orgTitle" title="Organizational Title" autocomplete="organization-title"
+                        pattern="[A-Za-z\- ]{7,}" required>
+                    <small>Only letters, hyphens, and spaces allowed (min 7 characters).</small>
+                    <br><br>
+                
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" title="Email Address" autocomplete="email" placeholder="example@domain.com" required>
+                    <br><br>
+                
+                    <label for="phone">Mobile Phone:</label>
+                    <input type="tel" id="phone" name="phone" title="Mobile Phone" autocomplete="tel" required>
+                    <br><br>
+                
+                    <label for="organization">Organization Name:</label>
+                    <input type="text" id="organization" name="organization" title="Organization Name" autocomplete="organization" required>
+                    <br><br>
+                
+                    <label for="membership">Membership Level:</label>
+                    <select id="membership" name="membership" title="Membership Level" required>
+                        <option value="">Select a level</option>
+                        <option value="NP Membership">NP Membership (No fee)</option>
+                        <option value="Bronze Membership">Bronze Membership</option>
+                        <option value="Silver Membership">Silver Membership</option>
+                        <option value="Gold Membership">Gold Membership</option>
+                    </select>
+                    <br><br>
+                
+                    <label for="description">Organization Description:</label>
+                    <textarea id="description" name="description" title="Organization Description"></textarea>
+                    <br><br>
+                
+                    <input type="hidden" id="timestamp" name="timestamp" value="">
+                    <input type="submit" value="Submit Application">
+                </form>
+    
+                <div class="membership-cards">
+                    <div class="card" id="np-card">
+                        <h3>NP Membership</h3>
+                        <p>No Fee</p>
+                        <a href="#np-modal" class="modal-link">More Info</a>
+                    </div>
+                
+                    <div class="card" id="bronze-card">
+                        <h3>Bronze Membership</h3>
+                        <p>$100/year</p>
+                        <a href="#bronze-modal" class="modal-link">More Info</a>
+                    </div>
+                
+                    <div class="card" id="silver-card">
+                        <h3>Silver Membership</h3>
+                        <p>$500/year</p>
+                        <a href="#silver-modal" class="modal-link">More Info</a>
+                    </div>
+                
+                    <div class="card" id="gold-card">
+                        <h3>Gold Membership</h3>
+                        <p>$1000/year</p>
+                        <a href="#gold-modal" class="modal-link">More Info</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="np-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>NP Membership Benefits</h2>
+                    <ul>
+                        <li>Access to special events</li>
+                        <li>Discounted event tickets</li>
+                        <li>Limited advertising opportunities</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div id="bronze-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Bronze Membership Benefits</h2>
+                    <ul>
+                        <li>All NP benefits</li>
+                        <li>Training programs</li>
+                        <li>Spotlight positions on the website</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div id="silver-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Silver Membership Benefits</h2>
+                    <ul>
+                        <li>All Bronze benefits</li>
+                        <li>Priority event sponsorship</li>
+                        <li>Premium advertising</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div id="gold-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Gold Membership Benefits</h2>
+                    <ul>
+                        <li>All Silver benefits</li>
+                        <li>Exclusive event access</li>
+                        <li>High-priority sponsorship opportunities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-left">
+            <p>Tri-City Chamber of Commerce<br>
+            7130 W Grandridge Blvd., Suite C, Kennewick, WA 99336 USA<br>
+            Phone: (509) 736-0510<br>
+            Email: <a href="mailto:info@tricityregionalchamber.com">info@tricityregionalchamber.com</a></p>
+        </div>
+        <div class="footer-icons">
+            <a href="https://www.facebook.com/TriCityRegionalChamber/" target="_blank">
+                <img src="images/facebook.png" alt="Facebook"/>
+            </a>
+            <a href="https://x.com/i/flow/login?redirect_after_login=%2Ftricitychamber" target="_blank">
+                <img src="images/twitter.png" alt="Twitter"/>
+            </a>
+            <a href="https://www.linkedin.com/company/tri-city-regional-chamber-of-commerce/" target="_blank">
+                <img src="images/linkedin.png" alt="LinkedIn"/>
+            </a>
+        </div>
+        <div class="footer-right">
+            <p>&copy; <span id="copyrightYear">YYYY</span> Jason Yale - Washington<br>
+            <span id="lastModified">Last Modified: </span><br>
+            WDD231 Class Project</p>
+        </div>
+    </footer>
+</body>
+</html>
