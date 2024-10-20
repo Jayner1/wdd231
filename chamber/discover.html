@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tri-Cities WA Chamber of Commerce Home Page</title>
+    <meta name="description" content="This is the home page for the tri cities chamber of Commerce. Made by Jason Yale.">
+    <meta name="author" content="Jason Yale">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="icon" href="images/favicon.ico">
+    <script src="scripts/chamber.js" defer></script>
+    <meta property="og:title" content="Tri-City Regional Chamber of Commerce"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="https://jayner1.github.io/wdd231/chamber/images/kennewick.jpg"/>
+    <meta property="og:url" content="https://jayner1.github.io/wdd231/chamber/index.html"/>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <img src="images/kennewick.jpg" alt="Logo">
+            <h1>Tri-Cities Chamber of Commerce</h1>
+        </div>
+        <nav>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" title="Home Page">Home</a> 
+                <a href="directory.html" title="Directory">Directory</a>
+                <a href="join.html" title="Join">Join</a>
+                <a href="discover.html" title="Discover" class="active">Discover</a>
+            </div>
+        </nav>
+    </header>
+<main class="discover-grid">
+    <aside class="sidebar">
+        <h2>Local Statistics</h2>
+        <ul>
+            <li>Population: 300,000+</li>
+            <li>Attractions: Columbia River, Wine Country</li>
+            <li>Major Events: Water Follies, Balloon Rally</li>
+        </ul>
+        <div id="calendar"></div>
+    </aside>
+
+    <section class="main-content">
+        <h2>Explore Tri-Cities</h2>
+        <div class="photo-gallery">
+            <figure>
+                <img src="images/cable.jpg" alt="Cable Bridge" loading="lazy">
+                <figcaption>Cable Bridge</figcaption>
+            </figure>
+            <figure>
+                <img src="images/vineyard.jpg" alt="Local Vineyard" loading="lazy">
+                <figcaption>Local Vineyard</figcaption>
+            </figure>
+            <figure>
+                <img src="images/911.jpg" alt="9/11 Monument" loading="lazy">
+                <figcaption>9/11 Monument</figcaption>
+            </figure>
+            <figure>
+                <img src="images/badger.jpg" alt="Badger Mountain" loading="lazy">
+                <figcaption>Badger Mountain</figcaption>
+            </figure>
+            <figure>
+                <img src="images/blue.jpg" alt="Blue Bridge" loading="lazy">
+                <figcaption>Blue Bridge</figcaption>
+            </figure>
+            <figure>
+                <img src="images/temple.jpg" alt="Columbia River Temple" loading="lazy">
+                <figcaption>Columbia River Temple</figcaption>
+            </figure>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="footer-left">
+        <p>Tri-City Chamber of Commerce<br>
+        7130 W Grandridge Blvd., Suite C, Kennewick, WA 99336 USA<br>
+        Phone: (509) 736-0510<br>
+        Email: <a href="mailto:info@tricityregionalchamber.com">info@tricityregionalchamber.com</a></p>
+    </div>
+    <div class="footer-icons">
+        <a href="https://www.facebook.com/TriCityRegionalChamber/" target="_blank">
+            <img src="images/facebook.png" alt="Facebook"/>
+        </a>
+        <a href="https://x.com/i/flow/login?redirect_after_login=%2Ftricitychamber" target="_blank">
+            <img src="images/twitter.png" alt="Twitter"/>
+        </a>
+        <a href="https://www.linkedin.com/company/tri-city-regional-chamber-of-commerce/" target="_blank">
+            <img src="images/linkedin.png" alt="LinkedIn"/>
+        </a>
+    </div>
+    <div class="footer-right">
+        <p>&copy; <span id="copyrightYear">YYYY</span> Jason Yale - Washington<br>
+        <span id="lastModified">Last Modified: </span><br>
+        WDD231 Class Project</p>
+    </div>
+</footer>
+</body>
+</html>

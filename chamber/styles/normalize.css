@@ -328,11 +328,6 @@ main h1 {
     color: #666;
 }
 
-/* .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-} */
-
 .random-member-cards {
     display: flex;
     justify-content: space-around;
@@ -350,4 +345,115 @@ main h1 {
 .member-card img {
     max-width: 100%;
     height: auto;
+}
+
+.discover-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.sidebar {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.sidebar p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    color: #333;
+}
+
+.main-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px;
+}
+
+.photo-gallery figure {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.photo-gallery img {
+    width: 100%;        
+    height: 200px;    
+    object-fit: cover;
+}
+
+.photo-gallery figcaption {
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+    padding: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .discover-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        order: 1;
+    }
+
+    .main-content {
+        order: 2;
+    }
+}
+
+@media (hover: hover) and (min-width: 768px) {
+    .photo-gallery img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.sidebar #calendar {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#calendar table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+#calendar th, #calendar td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 14.28%;
+}
+
+#calendar th {
+    background-color: #333;
+    color: white;
+}
+
+#calendar td {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.highlight {
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    padding: 10px;
+    border: 2px solid white; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
 }

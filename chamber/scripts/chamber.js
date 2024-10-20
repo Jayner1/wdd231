@@ -185,3 +185,88 @@ function displayWeatherForecast(data) {
 
 fetchWeatherForecast();
 
+document.addEventListener("DOMContentLoaded", () => {
+    const sidebar = document.querySelector(".sidebar");
+    
+    const visitorMessageDiv = document.createElement("div");
+    
+    const currentDate = new Date();
+    
+    const lastVisit = localStorage.getItem("lastVisit");
+    
+    let message = '';
+    
+    if (!lastVisit) {
+        message = "Welcome! Let us know if you have any questions.";
+    } else {
+        const lastVisitDate = new Date(lastVisit);
+        
+        const timeDifference = currentDate - lastVisitDate;
+        const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24)); 
+
+        if (daysDifference < 1) {
+            message = "Back so soon! Awesome!";
+        } else if (daysDifference === 1) {
+            message = `You last visited 1 day ago.`;
+        } else {
+            message = `You last visited ${daysDifference} days ago.`;
+        }
+    }
+
+    const visitorMessage = document.createElement("p");
+    visitorMessage.textContent = message;
+    visitorMessageDiv.appendChild(visitorMessage);
+    
+    sidebar.insertBefore(visitorMessageDiv, sidebar.firstChild);
+
+    localStorage.setItem("lastVisit", currentDate.toISOString());
+});
+
+function generateCalendar() {
+    const calendarElement = document.getElementById('calendar');
+    const currentDate = new Date();
+    const month = currentDate.toLocaleString('default', { month: 'long' });
+    const year = currentDate.getFullYear();
+    const today = currentDate.getDate(); 
+
+    const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1).getDay();
+    const daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+
+    let calendar = `<h3>${month} ${year}</h3>`;
+    calendar += '<table>';
+    calendar += `
+        <thead>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+        </thead>
+        <tbody><tr>`;
+
+    for (let i = 0; i < firstDay; i++) {
+        calendar += '<td></td>';
+    }
+
+    for (let day = 1; day <= daysInMonth; day++) {
+        if ((day + firstDay - 1) % 7 === 0) {
+            calendar += '</tr><tr>';
+        }
+
+        if (day === today) {
+            calendar += `<td class="highlight">${day}</td>`;
+        } else {
+            calendar += `<td>${day}</td>`;
+        }
+    }
+
+    calendar += '</tr></tbody></table>';
+
+    calendarElement.innerHTML = calendar;
+}
+
+generateCalendar();
