@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Event Finder</title>
+  <meta name="description" content="Local Event Finder allows the user to input desired city and filter to match wanted results of events. Made by Jason Yale.">
+  <meta name="author" content="Jason Yale">
+  <link rel="icon" href="images/Favicon-32x32.svg">
+  <link rel="stylesheet" href="styles/index.css">
+  <script src="scripts/index.js" type="module" defer></script>
+</head>
+<body>
+    <header>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Welcome to Local Event Finder</h1>
+                <p>Discover events happening in your city.</p>
+                <div class="hero-images">
+                    <img src="images/football.webp" alt="Description of Image 1" loading="lazy">
+                    <img src="images/music.webp" alt="Description of Image 2" loading="lazy">
+                    <img src="images/theatre.jpg" alt="Description of Image 3" loading="lazy">
+                </div>
+            </div>
+        </section>
+    </header>
+  <main>
+    <section id="search-section">
+      <label for="city-input">Enter City:</label>
+      <input type="text" id="city-input" placeholder="e.g., Seattle" aria-required="true">
+      <button id="search-button">Find Events</button>
+    </section>
+
+    <section id="filters-section">
+      <h2>Filter Events</h2>
+      <label for="eventFilter">Select Event Type:</label>
+      <select id="eventFilter">
+          <option value="">Select Event Type</option>
+          <option value="KZFzniwnSyZfZ7v7na">Arts, Theatre & Comedy</option>
+          <option value="KZFzniwnSyZfZ7v7nJ">Music</option>
+          <option value="KZFzniwnSyZfZ7v7nE">Sports</option>
+          <option value="KZFzniwnSyZfZ7v7nn">Film</option>
+      </select>
+      
+      <label for="date-start">Start Date:</label>
+      <input type="date" id="date-start">
+      <label for="date-end">End Date:</label>
+      <input type="date" id="date-end">
+    </section>
+
+    <section id="events-section">
+      <h2>Events</h2>
+      <div id="events-container">
+      </div>
+    </section>
+
+    <section id="weather-section">
+      <h2>Weather in <span id="city-name">Selected City</span></h2>
+      <p id="weather-details">Weather details will be displayed here.</p>
+    </section>
+  </main>
+
+<footer>
+    <p>&copy; <span id="copyrightYear">YYYY</span> Jason Yale - Washington</p>
+    <p id="lastModified">Last Modified: </p>
+    <div class="social-icons">
+        <a href="https://www.ticketmaster.com" target="_blank" aria-label="Ticketmaster">
+            <img src="images/ticketmaster.png" alt="Ticketmaster" class="social-icon">
+        </a>
+        <a href="https://www.eventbrite.com" target="_blank" aria-label="Eventbrite">
+            <img src="images/eventbrite-icon-2048x2048-7keorzmm.png" alt="Eventbrite" class="social-icon">
+        </a>
+        <a href="https://www.eventzilla.net" target="_blank" aria-label="Eventzilla">
+            <img src="images/eventzilla.webp" alt="Eventzilla" class="social-icon">
+        </a>
+    </div>
+</footer>
+
+</body>
+</html>
