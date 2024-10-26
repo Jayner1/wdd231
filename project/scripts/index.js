@@ -50,18 +50,6 @@ async function fetchEvents(city, dateStart, dateEnd, segmentId) {
   }
 }
 
-document.getElementById('find-events-button').addEventListener('click', () => {
-  const city = document.getElementById('city-input').value;
-  const filters = getSelectedFilters(); // Assuming you have a function to get selected filters
-
-  // Store search criteria in localStorage
-  localStorage.setItem('searchCity', city);
-  localStorage.setItem('searchFilters', JSON.stringify(filters));
-
-  // Navigate to events-list.html
-  window.location.href = 'events-list.html';
-});
-
 function displayEvents(events) {
   const eventsContainer = document.getElementById('events-container');
   eventsContainer.innerHTML = '';
@@ -152,14 +140,3 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   });
-
-
-  document.addEventListener("DOMContentLoaded", function() {
-    const eventId = localStorage.getItem("selectedEventId");
-
-    if (eventId) {
-        fetchEventDetails(eventId);
-    } else {
-        document.getElementById("event-details-container").innerHTML = "<p>No event selected.</p>";
-    }
-});
